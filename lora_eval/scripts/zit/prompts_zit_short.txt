@@ -1,0 +1,33 @@
+# LoRA Checkpoint Evaluation Prompts — Z-Image Turbo (Critical Eight)
+# Abbreviated prompt set for faster checkpoint screening.
+# Covers the eight highest-priority evaluation dimensions.
+# Use for initial checkpoint comparison across many steps.
+# Run prompts_zit.txt on the best 2-3 checkpoints for full evaluation.
+#
+# 8 prompts x 3 seed multipliers = 24 images per checkpoint
+#
+#
+# 01 - Neutral Portrait
+# Baseline identity test. Failure here means the LoRA has not learned the character.
+looking directly at camera, neutral expression, studio portrait, upper body shot
+# 02 - Three Quarter View
+# Tests facial structure from the most common real-world angle.
+three quarter view, looking over shoulder toward camera
+# 03 - Side Profile
+# Tests profile accuracy — strong indicator of 3D facial structure learning.
+side profile view, looking left
+# 05 - Hair Pulled Back
+# Removes hairstyle as a crutch by exposing the full face and ears.
+hair pulled behind shoulders, ears visible, close-up portrait
+# 12 - Full Body Standing
+# Tests anatomy and proportion beyond portrait crops.
+full body standing pose, arms relaxed at sides
+# 14 - Hands Visible
+# Detail retention test. Compare across checkpoints rather than absolute score.
+upper body portrait, face clearly visible, both hands raised to shoulder height, fingers spread naturally, soft studio lighting
+# 19 - Dynamic Action Pose
+# Tests identity under significant body deformation and movement.
+dynamic action pose, balanced stance, arms raised, full body visible
+# 26 - Distance Shot
+# Tests whether identity holds at reduced scale — one of the most diagnostic prompts.
+standing in a large environment, facing camera, character occupies a small portion of frame

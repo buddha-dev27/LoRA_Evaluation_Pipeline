@@ -1,0 +1,23 @@
+# LoRA Checkpoint Evaluation Prompts — Wan 2.2 (Critical Eight)
+# Abbreviated prompt set for faster checkpoint screening.
+# Use for initial checkpoint comparison across many steps.
+# Run prompts_wan.txt on the best 2-3 checkpoints for full evaluation.
+#
+# 8 prompts x 3 seed multipliers = 24 images per checkpoint
+#
+# 01 - Neutral Portrait
+Medium shot of a woman looking directly at the camera with a neutral expression, soft frontal studio lighting, plain light grey background, upper body visible, photorealistic
+# 02 - Three Quarter View
+Medium shot of a woman in a three quarter view turning to look over her shoulder toward the camera, soft natural daylight, clean neutral background, photorealistic
+# 03 - Side Profile
+Medium shot showing the side profile of a woman looking to the left, soft diffused natural light from the front, plain neutral background, photorealistic
+# 05 - Hair Pulled Back
+Close-up portrait of a woman with her hair pulled back behind her shoulders, ears fully visible, looking at the camera, soft diffused natural light, plain background, photorealistic
+# 12 - Full Body Standing
+Full body photograph of a woman looking at the camera, wearing casual clothing, standing upright with arms relaxed at her sides, head at the top of the frame and feet at the bottom, soft even studio lighting, plain background, photorealistic
+# 14 - Hands Visible
+Medium shot of a woman facing the camera, face visible at the top of the frame, both hands raised to chest height with fingers spread naturally, soft studio lighting, photorealistic
+# 19 - Dynamic Action Pose
+Full body photograph of a woman in a dynamic energetic pose with a balanced stance and arms raised, face visible at the top of the frame, full figure visible, outdoor setting with natural light, photorealistic
+# 26 - Distance Shot
+Wide angle photograph of a woman standing in a large outdoor environment facing the camera, the woman occupying only a small portion of the frame with surroundings dominating, natural daylight, photorealistic

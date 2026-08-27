@@ -1,0 +1,134 @@
+# LoRA Checkpoint Evaluation Prompts — Z-Image Turbo
+# 30 prompts across 7 groups designed to test LoRA identity,
+# generalization, and training quality. All prompts are written
+# to produce scoreable images with visible facial information.
+#
+# See "Critical Eight" at the bottom for the highest-priority subset.
+#
+#
+# Group A — Core Identity Tests (01-06)
+# The most important prompts. These establish whether the LoRA has
+# learned the character's fundamental identity.
+#
+# 01 - Neutral Portrait
+# Baseline identity test. Failure here means the LoRA has not learned the character.
+looking directly at camera, neutral expression, studio portrait, upper body shot
+# 02 - Three Quarter View
+# Tests facial structure from the most common real-world angle.
+three quarter view, looking over shoulder toward camera
+# 03 - Side Profile
+# Tests profile accuracy — strong indicator of 3D facial structure learning.
+side profile view, looking left
+# 04 - Close-Up Portrait
+# Tests fine facial details at a range ArcFace can reliably detect.
+close-up portrait, face and neck visible, shoulders in frame, soft frontal studio lighting, plain background
+# 05 - Hair Pulled Back
+# Removes hairstyle as a crutch by exposing the full face and ears.
+hair pulled behind shoulders, ears visible, close-up portrait
+# 06 - Directional Lighting
+# Tests whether the character remains identifiable under unfamiliar lighting.
+directional light from one side, soft fill on shadow side, three quarter view, upper body visible, plain dark background
+#
+#
+# Group B — Expression Tests (07-11)
+# Tests whether the character remains recognizable under emotional variation.
+#
+# 07 - Genuine Smile
+genuine smile, bright eyes, portrait photo
+# 08 - Serious Expression
+serious expression, focused gaze
+# 09 - Surprised Expression
+surprised expression, raised eyebrows, open mouth
+# 10 - Laughing
+laughing naturally, joyful expression, eyes crinkled
+# 11 - Thoughtful Expression
+thoughtful expression, looking slightly downward
+#
+#
+# Group C — Body Proportion Tests (12-16)
+# Reveals anatomy issues that portrait-only tests miss.
+#
+# 12 - Full Body Standing
+full body standing pose, arms relaxed at sides
+# 13 - Arms Crossed
+standing with arms crossed, looking at camera
+# 14 - Hands Visible
+# Hand generation is difficult. Compare across checkpoints rather than absolute score.
+upper body portrait, face clearly visible, both hands raised to shoulder height, fingers spread naturally, soft studio lighting
+# 15 - Seated Pose
+seated on a chair, relaxed posture, hands visible
+# 16 - Cross-Legged Pose
+sitting cross-legged on the ground, relaxed posture
+#
+#
+# Group D — Movement and Outfit Tests (17-20)
+# Tests generalization beyond the training distribution.
+#
+# 17 - Walking Toward Camera
+walking toward camera, natural stride
+# 18 - Outfit Change
+# Tests training data leakage. LoRAs that overfit resist outfit changes.
+wearing a plain white t-shirt and jeans, casual everyday clothing, full body visible
+# 19 - Dynamic Action Pose
+dynamic action pose, balanced stance, arms raised, full body visible
+# 20 - Dynamic Stance
+# Tests upper body posture and direct engagement without hand generation issues.
+arms crossed, dynamic stance, looking directly at camera, upper body shot
+#
+#
+# Group E — Camera Angle Tests (21-24)
+# Identifies overfitting to training image camera angles.
+#
+# 21 - Overhead View
+viewed from slightly above, looking up toward camera
+# 22 - Low Angle View
+viewed from below, looking down toward camera
+# 23 - Tight Portrait
+# Tests fine facial detail while keeping the full face visible for scoring.
+chin to forehead portrait, full face visible, face filling most of frame, soft studio lighting, plain background
+# 24 - Wide Angle Full Body
+full body visible, wide-angle perspective
+#
+#
+# Group F — Recognition Tests (25-27)
+# Tests identity under reduced visual information.
+#
+# 25 - Three Quarter Rear View
+# Tests body orientation and partial profile while retaining enough facial
+# information for meaningful CLIP scoring against the dataset.
+looking over shoulder toward camera, three quarter rear view, face partially visible
+# 26 - Distance Shot
+# Character at small scale. Tests whether identity holds at reduced resolution.
+standing in a large environment, facing camera, character occupies a small portion of frame
+# 27 - Candid Style
+# Tests natural unposed appearance. Replaces silhouette which produced
+# unscorable images — no facial information available for CLIP comparison.
+candid style photo, natural relaxed pose, slight three quarter turn, soft outdoor lighting
+#
+#
+# Group G — Generalization Tests (28-30)
+# Exposes training weaknesses by placing the character in unfamiliar contexts.
+#
+# 28 - Leaning Against Wall
+leaning against a wall, casual pose, looking at camera
+# 29 - Wet or Rain Environment
+# Strong generalization test — wet hair and skin significantly alter appearance.
+standing in the rain, wet hair, close-up portrait
+# 30 - Complex Environment
+standing naturally in a detailed outdoor environment with complex surroundings, full body visible
+#
+#
+# ── Critical Eight ───────────────────────────────────────────────────────────
+# These eight prompts reveal the majority of identity and training issues.
+# Use this subset for fast checkpoint screening before a full run.
+#
+# 01  Neutral Portrait       — baseline identity
+# 02  Three Quarter View     — facial structure from realistic angle
+# 03  Side Profile           — 3D facial structure learning
+# 05  Hair Pulled Back       — identity without hairstyle crutch
+# 12  Full Body Standing     — anatomy and proportion
+# 14  Hands Visible          — detail retention under difficulty
+# 19  Dynamic Action Pose    — identity under body deformation
+# 26  Distance Shot          — recognition at reduced scale
+#
+# ─────────────────────────────────────────────────────────────────────────────

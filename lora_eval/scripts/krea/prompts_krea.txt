@@ -1,0 +1,124 @@
+# LoRA Checkpoint Evaluation Prompts — Krea 2 Turbo
+# Natural sentence-style prompts optimised for the Qwen3-VL text encoder.
+# Richer photographic descriptions with lighting and scene context anchor
+# Krea 2's photorealistic output. Avoid short tag-style prompts — the
+# Qwen3-VL encoder needs full sentences to produce consistent results.
+# All prompts produce scoreable images with visible facial information.
+#
+# See "Critical Eight" at the bottom for the highest-priority subset.
+#
+#
+# Group A — Core Identity Tests (01-06)
+#
+# 01 - Neutral Portrait
+# Baseline identity test. Failure here means the LoRA has not learned the character.
+A realistic portrait photograph of a person looking directly at the camera with a neutral expression, soft frontal studio lighting, plain light grey background, upper body shot, photographic realism
+# 02 - Three Quarter View
+# Tests facial structure from the most common real-world angle.
+A realistic portrait photograph of a person in a three quarter view, turning to look over their shoulder toward the camera, soft natural daylight, clean background, photographic realism
+# 03 - Side Profile
+# Tests profile accuracy — strong indicator of 3D facial structure learning.
+A realistic portrait photograph showing the side profile of a person looking to the left, soft diffused natural light from the front, plain neutral background, photographic realism
+# 04 - Close-Up Portrait
+# Tests fine facial details at a range ArcFace can reliably detect.
+A realistic close-up portrait photograph of a person looking directly at the camera, face and neck clearly visible, shoulders just entering the frame, soft frontal studio lighting, plain neutral background, photographic realism
+# 05 - Hair Pulled Back
+# Removes hairstyle as a crutch by exposing the full face and ears.
+A realistic close-up portrait photograph with the hair pulled back behind the shoulders and ears fully visible, soft diffused natural light, plain background, photographic realism
+# 06 - Directional Lighting
+# Tests whether the character remains identifiable under unfamiliar lighting.
+A realistic portrait photograph of a person with warm directional light from one side, soft fill light on the shadow side, three quarter view toward camera, upper body visible, plain dark background, photographic realism
+#
+#
+# Group B — Expression Tests (07-11)
+#
+# 07 - Genuine Smile
+A realistic portrait photograph of a person with a genuine warm smile and bright eyes, soft natural daylight, slight three quarter angle, photographic realism
+# 08 - Serious Expression
+A realistic portrait photograph of a person with a serious focused expression and direct steady gaze toward the camera, soft studio lighting, plain background, photographic realism
+# 09 - Surprised Expression
+A realistic portrait photograph of a person with a surprised expression, eyebrows raised and mouth slightly open, soft natural light, plain background, photographic realism
+# 10 - Laughing
+A realistic portrait photograph of a person laughing naturally with a joyful open expression and eyes crinkled with amusement, warm natural light, photographic realism
+# 11 - Thoughtful Expression
+A realistic portrait photograph of a person with a thoughtful contemplative expression, eyes cast slightly downward, soft diffused window light from the side, photographic realism
+#
+#
+# Group C — Body Proportion Tests (12-16)
+#
+# 12 - Full Body Standing
+A realistic full-body photograph of a person looking at the camera, wearing casual clothing, standing upright facing the camera, soft even studio lighting, plain background, photographic realism
+# 13 - Arms Crossed
+A realistic photograph of a person standing with their arms crossed, looking directly at the camera with a relaxed confident posture, soft natural lighting, photographic realism
+# 14 - Hands Visible
+# Hand generation is difficult. Compare across checkpoints rather than absolute score.
+A realistic portrait photograph of a person facing the camera, both hands raised to shoulder height with fingers spread naturally, soft studio lighting, photographic realism
+# 15 - Seated Pose
+A realistic medium shot photograph of a person seated on a chair looking off camera, relaxed posture with hands resting in their lap, warm indoor lighting, photographic realism
+# 16 - Cross-Legged Pose
+A realistic full-body composition photograph of a person sitting cross-legged on the ground, relaxed casual posture looking at the camera, soft natural light, photographic realism
+#
+#
+# Group D — Movement and Outfit Tests (17-20)
+#
+# 17 - Walking Toward Camera
+A realistic full-body photograph of a person walking naturally toward the camera with eyes locked on, soft outdoor daylight, photographic realism
+# 18 - Outfit Change
+# Tests training data leakage. LoRAs that overfit resist outfit changes.
+A realistic photograph of a person looking at the camera, wearing a plain white t-shirt and blue jeans, standing facing the camera, soft natural daylight, photographic realism
+# 19 - Dynamic Action Pose
+A realistic full body photograph of a person in a dynamic energetic pose with a balanced stance and arms raised, captured mid-movement, outdoor setting with natural light, photographic realism
+# 20 - Dynamic Stance
+# Tests upper body posture and direct engagement without hand generation issues.
+A realistic upper body photograph of a person standing with arms crossed in a strong dynamic stance, looking directly at the camera with a confident expression, dramatic directional lighting, photographic realism
+#
+#
+# Group E — Camera Angle Tests (21-24)
+#
+# 21 - Overhead View
+A realistic portrait photograph of a person viewed from slightly above, the person looking upward toward the camera lens, soft natural overhead light, photographic realism
+# 22 - Low Angle View
+A realistic portrait photograph of a person viewed from below looking upward, the person gazing downward toward the camera, natural sky or ceiling in background, photographic realism
+# 23 - Tight Portrait
+# Tests fine facial detail while keeping the full face visible for scoring.
+A realistic portrait photograph of a person from chin to forehead, looking directly at the camera, full face visible and occupying most of the frame, soft studio lighting, plain background, photographic realism
+# 24 - Wide Angle Full Body
+A realistic wide-angle photograph of a person standing centered in a large open environment, face visible at the top of the frame, full figure small relative to the surroundings, natural daylight, photographic realism
+#
+#
+# Group F — Recognition Tests (25-27)
+#
+# 25 - Three Quarter Rear View
+# Tests body orientation and partial profile while retaining enough facial
+# information for meaningful CLIP scoring against the dataset.
+A realistic photograph of a person in a three quarter rear view, turning to look back over their shoulder, face and eyes clearly visible near the top of the frame, natural outdoor lighting, photographic realism
+# 26 - Distance Shot
+# Character at small scale. Tests whether identity holds at reduced resolution.
+A realistic photograph of a person standing in a large outdoor environment facing the camera, the person occupying only a small portion of the frame with surroundings dominating, natural daylight, photographic realism
+# 27 - Candid Style
+# Tests natural unposed appearance.
+A realistic candid style photograph of a person in a natural relaxed unposed moment with a slight three quarter turn, soft outdoor overcast light, photographic realism
+#
+#
+# Group G — Generalization Tests (28-30)
+#
+# 28 - Leaning Against Wall
+A realistic photograph of a person leaning casually against a plain wall with arms loosely at their sides, looking at the camera, soft indoor lighting, photographic realism
+# 29 - Wet or Rain Environment
+# Strong generalization test — wet hair and skin significantly alter appearance.
+A realistic close-up portrait photograph of a person standing outdoors in light rain with wet hair clinging to their face, overcast grey sky, photographic realism
+# 30 - Complex Environment
+A realistic photograph of a person standing naturally in a detailed busy outdoor urban environment with complex surroundings, full body visible, natural daylight, photographic realism
+#
+#
+# ── Critical Eight ───────────────────────────────────────────────────────────
+# 01  Neutral Portrait       — baseline identity
+# 02  Three Quarter View     — facial structure from realistic angle
+# 03  Side Profile           — 3D facial structure learning
+# 05  Hair Pulled Back       — identity without hairstyle crutch
+# 12  Full Body Standing     — anatomy and proportion
+# 14  Hands Visible          — detail retention under difficulty
+# 19  Dynamic Action Pose    — identity under body deformation
+# 26  Distance Shot          — recognition at reduced scale
+#
+# ─────────────────────────────────────────────────────────────────────────────

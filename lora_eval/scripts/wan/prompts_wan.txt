@@ -1,0 +1,118 @@
+# LoRA Checkpoint Evaluation Prompts — Wan 2.2
+# Natural sentence-style prompts for the UMT5 text encoder.
+# Clear, direct descriptions with explicit shot type and scene context.
+# Trigger word injected by the script — not included here.
+# All prompts designed to produce a single visible face for ArcFace scoring.
+#
+# See "Critical Eight" at the bottom for the highest-priority subset.
+#
+#
+# Group A — Core Identity Tests (01-06)
+#
+# 01 - Neutral Portrait
+# Baseline identity test. Failure here means the LoRA has not learned the character.
+Medium shot of a woman looking directly at the camera with a neutral expression, soft frontal studio lighting, plain light grey background, upper body visible, photorealistic
+# 02 - Three Quarter View
+# Tests facial structure from the most common real-world angle.
+Medium shot of a woman in a three quarter view turning to look over her shoulder toward the camera, soft natural daylight, clean neutral background, photorealistic
+# 03 - Side Profile
+# Tests profile accuracy — strong indicator of 3D facial structure learning.
+Medium shot showing the side profile of a woman looking to the left, soft diffused natural light from the front, plain neutral background, photorealistic
+# 04 - Close-Up Portrait
+# Tests fine facial details at a range ArcFace can reliably detect.
+A close-up portrait of a woman looking directly at the camera, face and neck clearly visible, shoulders just entering the frame, soft frontal studio lighting, plain neutral background, photorealistic
+# 05 - Hair Pulled Back
+# Removes hairstyle as a crutch by exposing the full face and ears.
+Close-up portrait of a woman with her hair pulled back behind her shoulders, ears fully visible, looking at the camera, soft diffused natural light, plain background, photorealistic
+# 06 - Directional Lighting
+# Tests whether the character remains identifiable under unfamiliar lighting.
+A portrait of a woman with warm directional light from one side, soft fill light on the shadow side, three quarter view toward camera, upper body visible, plain dark background, photorealistic
+#
+#
+# Group B — Expression Tests (07-11)
+#
+# 07 - Genuine Smile
+Medium shot of a woman with a genuine warm smile and bright eyes, looking at the camera, soft natural daylight, slight three quarter angle, photorealistic
+# 08 - Serious Expression
+Medium shot of a woman with a serious focused expression and a direct steady gaze toward the camera, soft studio lighting, plain background, photorealistic
+# 09 - Surprised Expression
+Medium shot of a woman with a surprised expression, eyebrows raised and mouth slightly open, looking at the camera, soft natural light, plain background, photorealistic
+# 10 - Laughing
+Medium shot of a woman laughing naturally with a joyful open expression and eyes crinkled with amusement, looking at the camera, warm natural light, photorealistic
+# 11 - Thoughtful Expression
+Medium shot of a woman with a thoughtful contemplative expression, eyes cast slightly downward, soft diffused window light from the side, photorealistic
+#
+#
+# Group C — Body Proportion Tests (12-16)
+#
+# 12 - Full Body Standing
+Full body photograph of a woman looking at the camera, wearing casual clothing, standing upright with arms relaxed at her sides, head at the top of the frame and feet at the bottom, soft even studio lighting, plain background, photorealistic
+# 13 - Arms Crossed
+Medium shot of a woman standing with her arms crossed, looking directly at the camera with a relaxed confident posture, soft natural lighting, photorealistic
+# 14 - Hands Visible
+Medium shot of a woman facing the camera, face visible at the top of the frame, both hands raised to chest height with fingers spread naturally, soft studio lighting, photorealistic
+# 15 - Seated Pose
+Medium shot of a woman seated on a chair, face clearly visible, relaxed posture with hands resting in her lap, looking at the camera, warm indoor lighting, photorealistic
+# 16 - Cross-Legged Pose
+Full body photograph of a woman sitting cross-legged on the ground looking at the camera, face visible at the top of the frame, relaxed casual posture, soft natural light, photorealistic
+#
+#
+# Group D — Movement and Outfit Tests (17-20)
+#
+# 17 - Walking Toward Camera
+Full body photograph of a woman walking naturally toward the camera with eyes locked on the lens, face visible at the top of the frame and feet at the bottom, soft outdoor daylight, photorealistic
+# 18 - Outfit Change
+# Tests training data leakage. LoRAs that overfit resist outfit changes.
+Full body photograph of a woman looking at the camera, wearing a plain white t-shirt and blue jeans, standing facing the camera, head to feet visible, soft natural daylight, photorealistic
+# 19 - Dynamic Action Pose
+Full body photograph of a woman in a dynamic energetic pose with a balanced stance and arms raised, face visible at the top of the frame, full figure visible, outdoor setting with natural light, photorealistic
+# 20 - Dynamic Stance
+Medium shot of a woman standing with arms crossed in a strong confident stance, looking directly at the camera, dramatic directional lighting, photorealistic
+#
+#
+# Group E — Camera Angle Tests (21-24)
+#
+# 21 - Overhead View
+Medium shot of a woman viewed from slightly above, the woman looking upward toward the camera lens, soft natural overhead light, photorealistic
+# 22 - Low Angle View
+Medium shot of a woman viewed from below looking upward, the woman gazing downward toward the camera, natural background, photorealistic
+# 23 - Tight Portrait
+# Tests fine facial detail while keeping the full face visible for scoring.
+A portrait of a woman from chin to forehead, looking directly at the camera, full face visible and occupying most of the frame, soft studio lighting, plain background, photorealistic
+# 24 - Wide Angle Full Body
+Wide angle photograph of a woman standing centered in a large open environment, face visible at the top of the frame, full figure small relative to the surroundings, natural daylight, photorealistic
+#
+#
+# Group F — Recognition Tests (25-27)
+#
+# 25 - Three Quarter Rear View
+Medium shot of a woman in a three quarter rear view, turning to look back over her shoulder toward the camera, face and eyes clearly visible near the top of the frame, natural outdoor lighting, photorealistic
+# 26 - Distance Shot
+# Character at small scale. Tests whether identity holds at reduced resolution.
+Wide angle photograph of a woman standing in a large outdoor environment facing the camera, the woman occupying only a small portion of the frame with surroundings dominating, natural daylight, photorealistic
+# 27 - Candid Style
+Medium shot of a woman in a natural relaxed unposed moment with a slight three quarter turn looking at the camera, soft outdoor overcast light, photorealistic
+#
+#
+# Group G — Generalization Tests (28-30)
+#
+# 28 - Leaning Against Wall
+Medium shot of a woman leaning casually against a plain wall with arms loosely at her sides, looking at the camera, soft indoor lighting, photorealistic
+# 29 - Wet or Rain Environment
+# Strong generalization test — wet hair and skin significantly alter appearance.
+Close-up portrait of a woman standing outdoors in light rain with wet hair, looking at the camera, overcast grey sky, photorealistic
+# 30 - Complex Environment
+Full body photograph of a woman standing naturally in a busy outdoor urban environment, looking at the camera, face visible at the top of the frame, full body visible, natural daylight, photorealistic
+#
+#
+# ── Critical Eight ───────────────────────────────────────────────────────────
+# 01  Neutral Portrait       — baseline identity
+# 02  Three Quarter View     — facial structure from realistic angle
+# 03  Side Profile           — 3D facial structure learning
+# 05  Hair Pulled Back       — identity without hairstyle crutch
+# 12  Full Body Standing     — anatomy and proportion
+# 14  Hands Visible          — detail retention under difficulty
+# 19  Dynamic Action Pose    — identity under body deformation
+# 26  Distance Shot          — recognition at reduced scale
+#
+# ─────────────────────────────────────────────────────────────────────────────

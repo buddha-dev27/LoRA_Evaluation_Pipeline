@@ -1,0 +1,23 @@
+# LoRA Checkpoint Evaluation Prompts — MiniMax H3 (Critical Eight)
+# Abbreviated prompt set for faster checkpoint screening.
+# Use for initial comparison across many checkpoints.
+# Run prompts_minimax.txt on the best 2-3 checkpoints for full evaluation.
+#
+# 8 prompts x 3 seed multipliers = 24 images per checkpoint
+#
+# 01 - Neutral Portrait
+A woman looking directly at the camera with a neutral expression, soft frontal studio lighting, plain light grey background, upper body shot, still and composed
+# 02 - Three Quarter View
+A woman in a three quarter view looking over her shoulder toward the camera, soft natural daylight, clean neutral background, composed posture
+# 03 - Side Profile
+A woman in side profile looking to the left, soft diffused natural light from the front, plain neutral background, still pose
+# 05 - Hair Pulled Back
+A close-up portrait of a woman with her hair pulled back, ears fully visible, looking at the camera, soft diffused natural light, plain background
+# 12 - Full Body Standing
+A full body shot of a woman standing upright facing the camera, wearing casual clothing, arms relaxed at her sides, soft even studio lighting, plain background
+# 17 - Outdoor Natural Light
+A woman standing outdoors on a sunny day, looking at the camera, natural golden hour lighting, green trees and blue sky in the background
+# 21 - Dynamic Pose
+A woman in a dynamic energetic pose with arms raised, full body visible, outdoor setting with natural light
+# 22 - Distance Shot
+A woman standing in a large outdoor environment facing the camera, the woman occupying only a small portion of the frame, natural daylight

@@ -1,0 +1,33 @@
+# LoRA Checkpoint Evaluation Prompts — Krea 2 Turbo (Critical Eight)
+# Abbreviated prompt set for faster checkpoint screening.
+# Covers the eight highest-priority evaluation dimensions.
+# Use for initial checkpoint comparison across many steps.
+# Run prompts_krea.txt on the best 2-3 checkpoints for full evaluation.
+#
+# 8 prompts x 3 seed multipliers = 24 images per checkpoint
+#
+#
+# 01 - Neutral Portrait
+# Baseline identity test. Failure here means the LoRA has not learned the character.
+A realistic portrait photograph of a person looking directly at the camera with a neutral expression, soft frontal studio lighting, plain light grey background, upper body shot, photographic realism
+# 02 - Three Quarter View
+# Tests facial structure from the most common real-world angle.
+A realistic portrait photograph of a person in a three quarter view, turning to look over their shoulder toward the camera, soft natural daylight, clean background, photographic realism
+# 03 - Side Profile
+# Tests profile accuracy — strong indicator of 3D facial structure learning.
+A realistic portrait photograph showing the side profile of a person looking to the left, soft diffused natural light from the front, plain neutral background, photographic realism
+# 05 - Hair Pulled Back
+# Removes hairstyle as a crutch by exposing the full face and ears.
+A realistic close-up portrait photograph with the hair pulled back behind the shoulders and ears fully visible, soft diffused natural light, plain background, photographic realism
+# 12 - Full Body Standing
+# Tests anatomy and proportion beyond portrait crops.
+A realistic full-body photograph of a person looking at the camera, wearing casual clothing, standing upright facing the camera, soft even studio lighting, plain background, photographic realism
+# 14 - Hands Visible
+# Detail retention test. Compare across checkpoints rather than absolute score.
+A realistic portrait photograph of a person facing the camera, both hands raised to shoulder height with fingers spread naturally, soft studio lighting, photographic realism
+# 19 - Dynamic Action Pose
+# Tests identity under significant body deformation and movement.
+A realistic full body photograph of a person in a dynamic energetic pose with a balanced stance and arms raised, captured mid-movement, outdoor setting with natural light, photographic realism
+# 26 - Distance Shot
+# Tests whether identity holds at reduced scale — one of the most diagnostic prompts.
+A realistic photograph of a person standing in a large outdoor environment facing the camera, the person occupying only a small portion of the frame with surroundings dominating, natural daylight, photographic realism
