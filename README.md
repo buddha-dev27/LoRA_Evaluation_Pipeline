@@ -50,7 +50,7 @@ The weight test produces an equivalent chart across strength values rather than 
 
 ## Documentation
 
-Full setup instructions, folder structure, script configuration, and per-model workflow documentation are in `docs/LoRA_Eval_Pipeline_Guide.md`. AI-Toolkit training settings for each supported model are in `docs/aitoolkit_settings.md`.
+Full setup instructions, folder structure, script configuration, and per-model workflow documentation are in `docs/LoRA_Eval_Pipeline_Guide.md`. 
 
 ## Key Findings
 
