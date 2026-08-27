@@ -19,9 +19,9 @@ The pipeline generates three sets of images for each character:
 2. **Checkpoint images** — one set per checkpoint, generated with the LoRA at full strength. The pipeline auto-detects all checkpoint files in the character's LoRA folder and queues them in order.
 3. **Weight test images** — one set per strength value for the best checkpoint, used to identify the optimal production weight.
 
-Each image is then scored against the training dataset using three metrics:
+Each image is then scored against the training dataset images using three metrics:
 
-- **CLIP** — semantic similarity between generated images and the training dataset. Measures how well the overall character appearance, clothing, and scene context match the training data.
+- **CLIP** — semantic similarity between generated images and the training dataset images. Measures how well the overall character appearance, clothing, and scene context match the training data.
 - **LPIPS** — perceptual distance between the LoRA image and the baseline. Measures how much visual change the LoRA is making. Rising LPIPS alongside rising CLIP delta indicates healthy learning; rising LPIPS with falling CLIP delta indicates overtraining.
 - **ArcFace** — face identity similarity between generated images and the dataset's mean face embedding. Measures character face accuracy independently of clothing and scene. ArcFace often peaks at a different checkpoint than CLIP, providing a more complete picture of identity learning.
 
@@ -34,16 +34,16 @@ All scoring results are written to a standalone interactive HTML file that can b
 - Positive delta percentage across checkpoints
 - LPIPS perceptual distance curve
 - ArcFace face identity curve
-- All metrics normalised to 0–1 for trend comparison
+- All metrics normalized to 0–1 for trend comparison
 - Summary statistics highlighting best checkpoint for each metric
 
-The weight test produces an equivalent chart across strength values rather than checkpoints.
+The weight test produces an equivalent chart across strength values for a single checkpoint.
 
 ## Requirements
 
 - **ComfyUI** with the relevant model files installed
 - **Python 3.10+** with a dedicated virtual environment
-- **AI-Toolkit** for training (evaluation pipeline works with any LoRA source)
+- **AI-Toolkit** or other training source (evaluation pipeline works with any LoRA source)
 - Python packages: `insightface`, `onnxruntime`, `open-clip-torch`, `lpips`, `torch`, `torchvision`, `pandas`, `tqdm`
 
 > **Note:** InsightFace buffalo_l models (~300 MB) download automatically to `~/.insightface` on first run. These models are licensed for non-commercial research use only.
