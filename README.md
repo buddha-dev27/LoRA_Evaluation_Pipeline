@@ -4,10 +4,10 @@ The pipeline evaluates a set of LoRA checkpoint files from AI-Toolkit (or other 
 
 ## Supported Models
 
-- **Krea 2** — recommended for character still image work
-- **MiniMax H3** — recommended for character video work *(pipeline in testing)*
-- **Wan 2.2** — video generation
-- **Z-Image Turbo** — fast local iteration
+- **Krea 2** 
+- **MiniMax H3** *(pipeline in testing)*
+- **Wan 2.2** 
+- **Z-Image Turbo** 
 
 Each model has its own ComfyUI evaluation workflow and a set of 30 prompts specifically engineered for that model's text encoder. A shorter Critical Eight prompt list is included for faster sweeps across large checkpoint ranges.
 
