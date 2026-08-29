@@ -273,17 +273,6 @@ set CHECKPOINT_STEP=5000
 Krea 2 is the recommended model for character still image work. It produces the
 highest quality outputs and learns fine character details other models miss. 
 
-### Training (AI-Toolkit)
-
-See `aitoolkit_settings.md` — Krea 2 section for full settings. Key points:
-
-- Train on `krea/Krea-2-Raw` — not Turbo
-- Timestep type: **Linear** (not Sigmoid)
-- Rank 32, LR 0.0002, steps 5000–8000
-- Trigger word embedded at the start of each caption
-- Cache Text Embeddings: ON 
-- Captions: natural sentences, "[Character Name]..." as subject, no identity features
-
 ### Evaluation workflow setup
 
 The workflow `lora_evaluation_krea.json` will need to be edited to include the path to 
@@ -327,16 +316,6 @@ run_weights.bat
 Z-Image Turbo is the recommended model for fast local iteration. Training runs on
 a 16GB card in a few hours. Image quality is lower than Krea 2 but the speed makes
 it ideal for testing settings before committing to a full run.
-
-### Training (AI-Toolkit)
-
-See `aitoolkit_settings.md` — Z-Image Turbo section. Key points:
-
-- Model: `ostris/zip-lora-xl` with training adapter
-- Timestep type: Weighted
-- Rank 32–64, LR 0.0002, steps 3000–8000
-- Captions: comma-separated tag style, no identity features
-- Trigger word embedded in captions
 
 ### Evaluation workflow setup
 
@@ -383,16 +362,6 @@ still frames from short video clips for evaluation — the trained LoRA applies 
 to full video generation at inference.
 
 Wan 2.2 trains paired `_high_noise` and `_low_noise` LoRA files — both are required.
-
-### Training (AI-Toolkit)
-
-See `aitoolkit_settings.md` — Wan 2.2 section. Key points:
-
-- Dual transformer: enable both high-noise and low-noise stages in MULTISTAGE panel
-- Timestep type: Linear
-- 4-bit ARA quantization
-- Captions: natural sentences with trigger word embedded
-- Num Frames: 1 in DATASETS panel
 
 ### Evaluation workflow setup
 
