@@ -552,4 +552,3 @@ both cases — see the function in the script.
 
 ---
 
-*Pipeline developed by Buddha and Claude · July 2026*
